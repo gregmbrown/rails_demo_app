@@ -33,5 +33,10 @@ DemoApp::Application.configure do
   config.assets.compress = false
 
   # Expands the lines which load the assets
-  config.assets.debug = true
+  #config.assets.debug = true
+  # FIXME: For some reason, I get the following error:
+  #   ERROR NoMethodError: undefined method `page_cache_extension' for
+  #   ActionController::Base:Class
+  # In searching the net, I discovered that disabling asset debug fixes this.
+  config.assets.debug = false
 end
